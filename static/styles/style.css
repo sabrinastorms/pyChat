@@ -1,7 +1,7 @@
 body
 {
 font-family: Garamond;
-background-color: black;
+background-color: white;
 }
 h1
 {
@@ -21,7 +21,7 @@ text-align: center;
 #chatbox
 {
 background-color: black;
-margin-left: auto;
+margin-left: 20px;
 margin-right: auto;
 width: 40%;
 margin-top: 60px;
@@ -67,6 +67,10 @@ line-height: 30px;
 background-color: #EF5350;
 padding: 10px;
 border-radius: 2px;
+}
+#toBeScrolledTo{
+  position: relative;
+  top: 500px;
 }
 #tidbit {
 position:absolute;

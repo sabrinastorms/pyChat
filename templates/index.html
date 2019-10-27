@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="<a href="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</a>"></script>
+<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<h1>Chatbot Try1</h1>
+<h1>Chatbot Try6</h1>
 <div>
 <div id="chatbox">
 <p class="botText"><span>Hello World</span></p>
@@ -16,25 +16,26 @@
 </div>
 <script>
 function getBotResponse() {
-var rawText = $("#textInput").val();
-var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
-$("#textInput").val("");
-$("#chatbox").append(userHtml);
-document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-$.get("/get", { msg: rawText }).done(function(data) {
-var botHtml = '<p class="botText"><span>' + data + '</span></p>';
-$("#chatbox").append(botHtml);
-document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-});
-}
-$("#textInput").keypress(function(e) {
-if(e.which == 13) {
-getBotResponse();
-}
-});
-$("#buttonInput").click(function() {
-getBotResponse();
-})
+  var rawText = $("#textInput").val();
+  var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+  $("#textInput").val("");
+  $("#chatbox").append(userHtml);
+  document.getElementById("userInput").scrollIntoView({block: "start", behavior: "smooth"});
+  $.get("/get", { msg: rawText }).done(function(data) {
+    var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+    $("#chatbox").append(botHtml);
+    document.getElementById("userInput").scrollIntoView({block: "start", behavior: "smooth"});
+  });
+  }
+
+//  document.getElementById("textInput").Keypress(function(e) {
+//    if(e.which == 13) {
+//      getBotResponse();
+//    }
+//  });
+  $("#buttonInput").click(function() {
+    getBotResponse();
+  })
 </script>
 </div>
 </body>
